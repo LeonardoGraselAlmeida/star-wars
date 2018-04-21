@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from "react-router-dom";
+import * as firebase from 'firebase';
+
+import Routes from './ui/routes';
+
+var config = {
+  apiKey: "AIzaSyDFbm_uZdjllw3FJfpnEG4TvKwrZMs1yRw",
+  authDomain: "films-star-wars.firebaseapp.com",
+  databaseURL: "https://films-star-wars.firebaseio.com",
+  projectId: "films-star-wars",
+  storageBucket: "",
+  messagingSenderId: "351382284805"
+};
+firebase.initializeApp(config);
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <BrowserRouter>
+          <Routes/>
+      </BrowserRouter>
     );
   }
 }
