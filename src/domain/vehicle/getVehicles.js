@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const getFilms = async (id) => {
+const getVehicles = async (id) => {
     try {
-       let url = `https://swapi.co/api/films`;
+       let url = `https://swapi.co/api/vehicles`;
 
        if(id){
            url = `${url}/${id}`
@@ -15,4 +15,4 @@ const getFilms = async (id) => {
     }
 }
 
-export default getFilms
+export default getVehicles
