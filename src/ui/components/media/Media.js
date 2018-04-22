@@ -4,6 +4,8 @@ import * as firebase from 'firebase';
 
 import './styles.css';
 
+import MediaBody from './media-body/MediaBody';
+
 class Media extends React.Component {
   state = {
     img: '',
@@ -11,8 +13,8 @@ class Media extends React.Component {
   }  
 
   componentWillMount(){
-    const year = this.props.date.substring(0,4);
-    firebase.database().ref(`/${this.props.id}`).on('value', snap => {
+    const year = this.props.film.release_date.substring(0,4);
+    firebase.database().ref(`/${this.props.film.episode_id}`).on('value', snap => {
       this.setState({img: snap.val(), year: year});
   });
      
@@ -20,8 +22,9 @@ class Media extends React.Component {
 
   render() {
     return (
+      <div>
         <div className="media-container">
-          <a className="media-link" title={`${this.props.title} (${this.state.year})`} role="button" href="#" >
+          <a className="media-link" title={`${this.props.film.title} (${this.state.year})`} role="button">
             <div className="media-imagem">
               <div className="media-imagem-container">
                 <div className="imagem-content">
@@ -31,20 +34,22 @@ class Media extends React.Component {
             </div>
             <div className="title-container">
               <div className="title">
-                <span>{this.props.title}</span>
+                <span>{this.props.film.title}</span>
               </div>
               <div className="year">{this.state.year}</div>
             </div>
           </a>
+        </div>
+        <div className="media-body">
+            <MediaBody film={this.props.film}></MediaBody>
+        </div>
         </div>
     );
   }
 }
 
 Media.propTypes = {
-  date: PropTypes.string,
-  title: PropTypes.string,
-  id: PropTypes.number
+  film: PropTypes.object
 };
 
 export default Media;

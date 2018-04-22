@@ -1,6 +1,6 @@
 import React from "react";
 
-import Media from "./../../components/media";
+import { Media } from "./../../components";
 
 import { getFilms } from '../../../domain';
 
@@ -22,7 +22,7 @@ export default class HomePage extends React.Component {
   renderFilms() {
     const films = this.state.films || [];
       return films.map(film => (
-         <Media key={film.episode_id} title={film.title} date={film.release_date} id={film.episode_id}></Media>
+         <Media key={film.episode_id} film={film}></Media>
     ));
   }
  

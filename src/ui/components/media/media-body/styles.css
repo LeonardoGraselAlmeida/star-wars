@@ -1,0 +1,17 @@
+span {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+p {
+    margin: 2px 2px 8px 8px;   
+    font-size: 14px; 
+}
+
+.link {
+    float:  right;
+    font-size:  13px;
+    font-weight: 600;
+    margin-right: 10px;
+    cursor: pointer;
+}
