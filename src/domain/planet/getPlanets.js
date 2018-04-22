@@ -1,18 +1,17 @@
 import axios from 'axios';
 
-const getPlanets = async (id) => {
-    try {
-       let url = `https://swapi.co/api/planets`;
+const getPlanets = async id => {
+  try {
+    let url = `https://swapi.co/api/planets`;
 
-       if(id){
-           url = `${url}/${id}`
-       }
-
-       return axios.get(url)
-
-    } catch (error) {
-        console.error(error)
+    if (id) {
+      url = `${url}/${id}`;
     }
-}
 
-export default getPlanets
+    return axios.get(url);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export default getPlanets;

@@ -6,10 +6,10 @@ import getStarships from './starship/getStarships';
 import getVehicles from './vehicle/getVehicles';
 
 export {
-    getCharacters,
-    getFilms,
-    getPlanets,
-    getSpecies,
-    getStarships,
-    getVehicles
-}
+  getCharacters,
+  getFilms,
+  getPlanets,
+  getSpecies,
+  getStarships,
+  getVehicles
+};

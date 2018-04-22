@@ -1,5 +1,3 @@
-import Media from './media/Media'
+import Media from './media/Media';
 
-export {
-    Media
-}
+export { Media };
